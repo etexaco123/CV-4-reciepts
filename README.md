@@ -52,7 +52,7 @@ $ "python predict.py --input output/test_image.jpg" or
 $ "python predict.py --input output/test_images.txt"
   
 The resulting output image is shown in in the image below  
-![Alt](https://github.com/etexaco123/Klippa-ML-Assesment/blob/main/output_image.png)
+![Alt](https://github.com/etexaco123/Klippa-ML-Assesment/blob/main/output/output_image.png)
 
 ## OCR features
 The OCR was implemented by using the REST API features to call the Google Vison API from your google cloud account. **Note** you have to have a google console account and enable billing and generate you API key which is in json format to use this feature. This can be found in the "ocr.py" file
