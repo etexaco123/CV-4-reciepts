@@ -18,6 +18,12 @@ The problem identified for the project is clearly a bounging box regresion probl
 - Extracted the bounding box information from the annotations.json  file to create the training and test datset.  
 - To do this I created a function in the preprocess.py to help me convert my the bounding box cordinates in the annotations file into pascal voc format which is sorted as xmin,ymin,xmax,ymax  
 - To do this each files in the sub directory containing the **'document.jpg'**, **'annotations.json'** was called recusively and the ground truth bounding box information about the images in pascal voc format was appended to the file path of each image file in the subdirectories and written to CSV. 
+- A ML model is designed and using transfer learning and fine-tuning.  
+- The images are loaded, pixels are normalized and converted to arrays and reshaped to 224 X 224 input shape and fed to the model for training.  
+- A test image or list of test images are fed into the model for bounding box prediction.  
+- The predicted bounding box is used to crop the test image and fed the croped image to the Google Vision API by calling the rest API.  
+- The total amount numbers is extracted from the croped image using the Vision API.  
+- The folder directory from where the image was uploaded is returned as well as the respose from the the API
 
 ## Settings 
 - **The file directory Settings**: this is implemented in the config file in the utils package I created. The project folder can be read from any current diectory you are in.  
