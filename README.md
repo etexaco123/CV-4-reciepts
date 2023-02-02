@@ -45,7 +45,7 @@ Since the dataset is few I thought it was best to apply transfer learning techni
 - The final output layer is fited only 4 neurons with sigmoid activation
 - MSE loss function  
   
-![Alt](https://github.com/etexaco123/Klippa-ML-Assesment/blob/main/output/model_architecture.png)  
+<!---![Alt](https://github.com/etexaco123/Klippa-ML-Assesment/blob/main/output/model_architecture.png) ---> 
 Below is the plot for MSE loss on the traing and validation set
 ![Alt](https://github.com/etexaco123/Klippa-ML-Assesment/blob/main/output/plot.png)
 
