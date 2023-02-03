@@ -34,7 +34,7 @@ The problem identified for the project is clearly a bounging box regresion probl
 - batch size = 32
 
 ## Model Design and Architecture
-Since the dataset is few I thought it was best to apply transfer learning technique to train on the pretrained weights and bias of deep neural net. To design the best solution I tried Mobilenet, Resnet and VGG16, of all of them the VGG16 gave the most promising architecture on the training and validation. Also there was the challenge of selecting the best loss function for the task so I attempted different combination of methods among the MSE, Huber loss and intersection over Union(IOU) but I had to write a custom made function for IoU because we don't have a built-in function yet. But in the end the MSE performed better during warm-up steps.
+Since the dataset is few I thought it was best to apply transfer learning technique to train on the pretrained weights and bias of deep neural net since we have a small dataset. To design the best solution I tried MobileNet, ResNet and VGG16, of all of them the VGG16 gave the most promising results on the training and validation. This CNN model was implemented in tensorflow. Also there was the challenge of selecting the best loss function for the task so I attempted different combination of methods among the MSE, Huber loss and intersection over Union(IOU) but I had to write a custom made function for IoU because we don't have a built-in function yet. But in the end the MSE performed better during warm-up steps.
 
 ![Alt](https://github.com/etexaco123/Klippa-ML-Assesment/blob/main/output/model_architecture.png)
 
@@ -62,10 +62,10 @@ The resulting output image is shown in in the image below
 ![Alt](https://github.com/etexaco123/Klippa-ML-Assesment/blob/main/output/output_image.png)
 
 ## OCR features
-The OCR was implemented by using the REST API features to call the Google Vison API from your google cloud account. **Note** you have to have a google console account and enable billing and generate you API key which is in json format to use this feature. This can be found in the "ocr.py" file
+The OCR was implemented by using the REST API features to call the Google Vison API from your google cloud account. **Note** you have to have a google console account and enable billing and generate your API key which is in json format to use this feature. This can be found in the "ocr.py" file
 - My file is intrested in only the description field of the API
 
-## Extra features using Flask framework
+## Working on extra features using Flask framework
 The goal is to enable the images uploadable to the model to output the test image and its predicted bounding box 
 
 To run the app you can use   
