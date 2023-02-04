@@ -5,7 +5,8 @@ from google.oauth2 import service_account
 import pandas as pd
 
 # os.environ['GOOGLE_APP_CREDENTIALS'] = r'ServicAccount_token'
-creds = service_account.Credentials.from_service_account_file('***Use your Google Vision API Key Here****')
+# creds = service_account.Credentials.from_service_account_file('***Use your Google Vision API Key Here****')
+creds = service_account.Credentials.from_service_account_file('./ServicAccount_token.json')
 
 # detect the croped image containing the text from the predicted bounding box
 # the takes as a parameter the parth to the file from your local disk
@@ -28,11 +29,8 @@ def detect_text(path):
     # extract only the field containing the text which is the 'description'
     df = pd.DataFrame(columns = ['locale','description'])
     for text in texts:
-        df = df.append(
-            dict(
-                locale = text.locale,
-                description = text.description
-            ),
-            ignore_index = True
-        )
-    return df['description']
+        df = pd.concat([df, pd.DataFrame({
+            'locale': [text.locale],
+            'description': [text.description]
+        })], ignore_index=True)
+    return df['description'][0]
