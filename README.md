@@ -12,11 +12,11 @@ The project involves the use of computer vision algorithims to detect the total 
 ## Problem Description
 The problem identified for the project is clearly a bounging box regresion problem. This is because the 4 vertices of the ground truth box is clearly a continous variable. during inpection also noticed that some images are really blured or captured under poor lighting conditions and therefore requires a robust solution.
 
-## Procedure
-- I downloaded the 500MB file from the email  
+## Procedure  
 - Created a virtual environment for the project  
-- Extracted the bounding box information from the annotations.json  file to create the training and test datset.  
-- To do this I created a function in the preprocess.py to help me convert my the bounding box cordinates in the annotations file into pascal voc format which is sorted as xmin,ymin,xmax,ymax  
+- Download and extract the 500MB file from the email. Copy the **train** folder to the same directory as the output, config.
+- Extract the bounding box information from the annotations.json  file to create the training and test datset.  
+- To do this I created a function in the preprocess.py to help me convert the bounding box cordinates in the annotations file into pascal voc format which is sorted as xmin,ymin,xmax,ymax  
 - To do this each files in the sub directory containing the **'document.jpg'**, **'annotations.json'** was called recusively and the ground truth bounding box information about the images in pascal voc format was appended to the file path of each image file in the subdirectories and written to CSV. 
 - A ML model is designed and using transfer learning and fine-tuning.  
 - The images are loaded, pixels are normalized and converted to arrays and reshaped to 224 X 224 input shape and fed to the model for training.  
