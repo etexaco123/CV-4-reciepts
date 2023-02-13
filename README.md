@@ -13,7 +13,8 @@ The project involves the use of computer vision algorithims to detect the total 
 The problem identified for the project is clearly a bounging box regresion problem. This is because the 4 vertices of the ground truth box is clearly a continous variable. during inpection also noticed that some images are really blured or captured under poor lighting conditions and therefore requires a robust solution.
 
 ## Procedure  
-- Created a virtual environment for the project  
+- Created a virtual environment for the project 
+- Run "pip install -r requirements.txt" at your project directory
 - Download and extract the 500MB file from the email. Copy the **train** folder to the same directory as the output, config.
 - Extract the bounding box information from the annotations.json  file to create the training and test datset.  
 - To do this I created a function in the preprocess.py to help me convert the bounding box cordinates in the annotations file into pascal voc format which is sorted as xmin,ymin,xmax,ymax  
